@@ -1,0 +1,38 @@
+[ 2023-01-05 20:02:14,209 ] 15 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-01-05 20:02:14,209 ] 22 root - INFO - Exporting collection data as pandas dataframe
+[ 2023-01-05 20:02:14,209 ] 21 root - INFO - Reading data from database: aps and collection: sensor
+[ 2023-01-05 20:02:17,568 ] 23 root - INFO - Found columns: Index(['_id', 'class', 'aa_000', 'ab_000', 'ac_000', 'ad_000', 'ae_000',
+       'af_000', 'ag_000', 'ag_001',
+       ...
+       'ee_002', 'ee_003', 'ee_004', 'ee_005', 'ee_006', 'ee_007', 'ee_008',
+       'ee_009', 'ef_000', 'eg_000'],
+      dtype='object', length=172)
+[ 2023-01-05 20:02:17,568 ] 25 root - INFO - Dropping column: _id 
+[ 2023-01-05 20:02:17,766 ] 27 root - INFO - Row and columns in df: (36188, 171)
+[ 2023-01-05 20:02:17,766 ] 28 root - INFO - Save data in feature store
+[ 2023-01-05 20:02:18,292 ] 34 root - INFO - Create feature store folder if not available
+[ 2023-01-05 20:02:18,293 ] 38 root - INFO - Save df to feature store folder
+[ 2023-01-05 20:02:20,753 ] 43 root - INFO - split dataset into train and test set
+[ 2023-01-05 20:02:21,281 ] 47 root - INFO - create dataset directory folder if not available
+[ 2023-01-05 20:02:21,281 ] 52 root - INFO - Save df to feature store folder
+[ 2023-01-05 20:02:23,553 ] 64 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/01052023__200214/data_ingestion/feature_store/sensor.csv', train_file_path='/config/workspace/artifact/01052023__200214/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/01052023__200214/data_ingestion/dataset/test.csv')
+[ 2023-01-05 20:02:24,021 ] 20 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-01-05 20:02:24,023 ] 107 root - INFO - Reading base dataframe
+[ 2023-01-05 20:02:25,645 ] 109 root - INFO - Replace na value with NaN
+[ 2023-01-05 20:02:26,932 ] 112 root - INFO - Drop null values column from base df
+[ 2023-01-05 20:02:27,884 ] 42 root - INFO - selecting column name which contains null above to 0.2
+[ 2023-01-05 20:02:27,885 ] 45 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2023-01-05 20:02:27,990 ] 115 root - INFO - Reading train dataframe
+[ 2023-01-05 20:02:28,383 ] 117 root - INFO - Reading test dataframe
+[ 2023-01-05 20:02:28,480 ] 120 root - INFO - Drop null values columns from train df
+[ 2023-01-05 20:02:28,495 ] 42 root - INFO - selecting column name which contains null above to 0.2
+[ 2023-01-05 20:02:28,495 ] 45 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2023-01-05 20:02:28,510 ] 122 root - INFO - Drop null values columns from test df
+[ 2023-01-05 20:02:28,516 ] 42 root - INFO - selecting column name which contains null above to 0.2
+[ 2023-01-05 20:02:28,517 ] 45 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2023-01-05 20:02:28,520 ] 125 root - INFO - Is all required columns present in train df
+[ 2023-01-05 20:02:28,521 ] 127 root - INFO - Is all required columns present in test df
+[ 2023-01-05 20:02:28,521 ] 131 root - INFO - As all column are available in train df hence detecting data drift
+[ 2023-01-05 20:02:28,521 ] 85 root - INFO - Hypothesis class: object, object 
+[ 2023-01-05 20:02:28,652 ] 85 root - INFO - Hypothesis aa_000: int64, int64 
+[ 2023-01-05 20:02:28,661 ] 85 root - INFO - Hypothesis ac_000: object, float64 
